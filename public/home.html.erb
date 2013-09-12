@@ -1,0 +1,67 @@
+
+
+<div class="row-fluid">
+<div class="span12" style="text-align:center;">
+<h1>Download the latest and greatest JavaScript <br />MV* frameworks and libraries...</h1><br />
+</div>
+
+
+<div class="span10" id="searchArea"><form class="form-horizontal">
+Search by name: <input ng-model="search" id="search" data-min-length="1" autocomplete="off" autofocus="autofocus" bs-typeahead="typeahead" placeholder="Live search..." /> and/or category: 
+
+<select ng-model="name2" ng-options="c.type as c.type for c in record | unique: 'type'">
+
+</select>
+
+
+	<button class="btn btn-submit" ng-show="(search || name2) != ''" ng-click="clearSearch()">Clear Search</button><br /><br />
+	
+	</form>
+
+
+  </div>
+  
+
+
+
+
+<div class="span12" ng-hide="filtered.length == 0">
+
+	<table class="table table-striped">
+	 <thead>
+      <tr>
+
+         <th>Name</th>
+         <th>Type</th>
+         <th>&nbsp;</th>
+		 <th>More Information</th>
+         <th>CDN</th>
+		 <th>Download</th>
+      </tr>
+   </thead>
+   
+   
+   <tbody>
+	   <tr ng-repeat="list in filtered = (record | filter: {type:name2, name: search}) | orderBy: '+type +name'">
+         <td>{{ list.name }}</td>
+         <td>{{list.type}}</td>
+         <td><img src="assets/{{list.logo}}" /></td>
+         <td><a  class="btn btn-info btn-large" target="_blank" href="{{list.url}}">Info</a></td>
+         <td><a ng-show="list.CDN != ''" class="btn btn-success btn-large" target="_blank" href="{{list.CDN}}">CDN</a></td>
+         <td><a target="_blank" class="btn btn-primary btn-large" href="{{list.download}}"><i class="icon-download-alt"></i> Download</a></td>
+
+      </tr>
+	
+
+   </tbody>
+</table>
+</div>
+
+
+	
+	<div class="alert alert-info span6 offset3" ng-show="filtered.length == 0">
+	<p>Darn! No listings match your search criteria. <span class="underline" ng-click="clearSearch()">Clear your search</span> and try again!</p>
+	</div>
+	
+
+</div>

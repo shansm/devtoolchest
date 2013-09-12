@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="tools">
+<head>
+  <title>Dev Tool Chest</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar" type="button">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="/#/" class="brand"><img src="assets/tool-box.png" /> Dev Tool Chest</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="active">
+                <a href="/#/">Home</a>
+              </li>
+              <li class="">
+                <a href="/#/about">About</a>
+              </li>
+             
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+	<div class="container">
+
+<div id="view" ng-view>
+<%= yield %>
+</div>
+
+</div>
+
+
+</body>
+</html>

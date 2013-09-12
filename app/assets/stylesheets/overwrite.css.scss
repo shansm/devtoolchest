@@ -1,0 +1,27 @@
+body { 
+    padding-top: 65px; 
+	font-family: 'Open Sans', sans-serif;
+}
+input{
+	font-size:14px;
+	height:20px;
+	padding: 4px 6px;
+}
+#searchArea, .alert{
+	margin:0 auto;
+	float:none;
+}
+.alert{padding-bottom: 14px;
+    padding-top: 14px;
+	background-color: #FF7518;
+    border: 1px solid transparent;
+	color:#ffffff;
+	}
+.alert p {
+margin:0px;
+text-shadow: none;
+}
+.underline{
+text-decoration:underline;
+cursor:pointer;
+}
